@@ -17,6 +17,7 @@ dbInitialSetup();
 app.use(cors());
 
 app.get("/plays", playController.getPlays);
+app.get("play/:id", playController.getPlayById);
 
 app.post("/webhook", express.json(), async (request, response) => {
   const agent = new WebhookClient({ request, response });
