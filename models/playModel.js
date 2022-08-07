@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const Play = Schema({
   name: String,
+  image: String,
   tickets: Number,
   ticketsPrice: Number,
   date: String,

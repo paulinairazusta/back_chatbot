@@ -4,6 +4,8 @@ const app = express();
 const cors = require("cors");
 const port = 3002;
 const { v4: uuidv4 } = require("uuid");
+const playController = require("./controllers/playController");
+
 let playName = "";
 
 const { WebhookClient } = require("dialogflow-fulfillment");
@@ -13,6 +15,8 @@ const dbInitialSetup = require("./dbInitialSetup");
 dbInitialSetup();
 
 app.use(cors());
+
+app.get("/plays", playController.getPlays);
 
 app.post("/webhook", express.json(), async (request, response) => {
   const agent = new WebhookClient({ request, response });
