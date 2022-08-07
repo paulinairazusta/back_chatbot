@@ -16,6 +16,9 @@ dbInitialSetup();
 
 app.use(cors());
 
+app.get("/reset", async (req, res) => {
+  await require("./seeders/playSeeder")();
+});
 app.get("/plays", playController.getPlays);
 app.get("/play/:id", playController.getPlayById);
 

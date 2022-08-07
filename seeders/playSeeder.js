@@ -7,7 +7,7 @@ const plays = [
       "https://www.teatroelgalpon.org.uy/wp-content/uploads/2022/06/El-prisionero-de-la-2da-Avenida-TICKANTEL-700x390-1.jpg",
     review: `¿Por qué una comedia escrita y estrenada en Broadway en el año 1971 se ha convertido en su obra más vigente, que más risas obtiene y también, con el tiempo, la que más entradas ha vendido en todo el mundo?
       La respuesta podría estar en que reflexiona, entre risas, sobre la sociedad de consumo, la imperiosa necesidad del éxito económico como logro personal y el miedo a perderlo.¿Se puede hacer una gran comedia sobre temas tan serios, a veces tan dramáticos?
-      Neil Simon lo demuestra. Tal vez porque esos temas se han convertido en más y más preocupantes para el hombre de nuestro tiempo  y aquí, el autor se ha convertido sin proponérselo en una especie de profeta moderno.`,
+      Neil Simon lo demuestra. `,
     tickets: 10,
     ticketsPrice: 200,
     date: "Sábados",
@@ -17,7 +17,7 @@ const plays = [
     name: "Tristeza y alegría en la vida de las jirafas",
     image:
       "https://www.teatroelgalpon.org.uy/wp-content/uploads/2022/05/Tristeza-y-alegria-en-la-vida-de-las-jirafas-1024x512-1.jpg",
-    review: `Tristeza y alegría en la vida de las jirafas”  nos recuerda lo agridulce que puede ser la vida en el momento de crecer.
+    review: `"Tristeza y alegría en la vida de las jirafas”  nos recuerda lo agridulce que puede ser la vida en el momento de crecer.
       Entre la realidad y la fantasía, los diferentes personajes que irán apareciendo van a permitir a la protagonista avanzar en su viaje y lo más importante, aprender sobre la vida.
       Un periplo que con humor nos permite criticar el consumismo, el capitalismo y la condición humana.`,
     tickets: 10,
@@ -54,7 +54,7 @@ Su amistad y su carrera se pondrán a prueba cuando un trepidante caso mal resue
     name: "Matilda, the musical",
     image:
       "https://www.teatroelgalpon.org.uy/wp-content/uploads/2022/07/Matilda-1300-x-1033px.jpg",
-    review: `Matilda The Musical es un espectáculo de comedia musical en inglés de los estudiantes de Secundaria del Colegio Brendan’s School. Recomendada para toda la familia. Duración 1 hora.`,
+    review: `"Matilda, the musical" es un espectáculo de comedia musical en inglés de los estudiantes de Secundaria del Colegio Brendan’s School. Recomendada para toda la familia. Duración 1 hora.`,
     ticketsPrice: 300,
     tickets: 10,
     date: "Viernes",
@@ -62,7 +62,7 @@ Su amistad y su carrera se pondrán a prueba cuando un trepidante caso mal resue
   },
 ];
 module.exports = async () => {
-  // await User.deleteMany({});
+  await Play.deleteMany({});
 
   for (let i = 0; i < plays.length; i++) {
     const name = plays[i].name;
