@@ -18,8 +18,9 @@ app.use(cors());
 
 app.get("/reset", async (req, res) => {
   await require("./seeders/playSeeder")();
+  res.send("The database has been reset");
 });
-app.get("/plays", playController.getPlays);
+app.post("/plays", playController.getPlays);
 app.get("/play/:id", playController.getPlayById);
 
 app.post("/webhook", express.json(), async (request, response) => {
