@@ -11,7 +11,7 @@ botRouter.post("/webhook", express.json(), async (request, response) => {
 
   function welcome(agent) {
     agent.add(
-      "¡Bienvenido/a! Soy el asistente del teatro El Galpón. Puedo ayudarte a sacar entradas o brindarte información sobre nuestras obras en cartelera. ¿Qué deseas?"
+      "¡Bienvenido/a! Soy el asistente del teatro El Telón. Puedo ayudarte a sacar entradas o brindarte información sobre nuestras obras en cartelera. ¿Qué deseas?"
     );
   }
 
