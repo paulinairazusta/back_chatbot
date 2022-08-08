@@ -2,6 +2,7 @@ const express = require("express");
 const botRouter = express.Router();
 const { WebhookClient } = require("dialogflow-fulfillment");
 const { v4: uuidv4 } = require("uuid");
+const Play = require("../models/playModel");
 
 let playName = "";
 
@@ -15,7 +16,6 @@ botRouter.post("/webhook", express.json(), async (request, response) => {
   }
 
   async function showPlaysBuy(agent) {
-    const Play = require("../models/playModel");
     const plays = await Play.find();
     agent.add(`Muy bien. Estas son nuestras obras en cartelera actualmente:
     -${plays[0].name}
@@ -27,7 +27,6 @@ botRouter.post("/webhook", express.json(), async (request, response) => {
   }
 
   async function showPlaysInformation(agent) {
-    const Play = require("../models/playModel");
     const plays = await Play.find();
     agent.add(`Estas son nuestras obras en cartelera actualmente:
     -${plays[0].name}
@@ -43,7 +42,6 @@ botRouter.post("/webhook", express.json(), async (request, response) => {
   }
 
   async function showSinglePlay(agent) {
-    const Play = require("../models/playModel");
     const play = await Play.findOne({ name: agent.parameters.playName });
     playName = play.name;
 
