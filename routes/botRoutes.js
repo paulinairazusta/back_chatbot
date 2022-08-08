@@ -67,7 +67,7 @@ botRouter.post("/webhook", express.json(), async (request, response) => {
     const play = await Play.findOne({ name: agent.parameters.playName });
     if (play.tickets === 0) {
       agent.add(
-        "Lo sentimos, no quedan entradas disponibles para esta función"
+        "Lo sentimos, no quedan entradas disponibles para esta función. ¿Deseas algo más?"
       );
     } else {
       agent.add("¿Cuántas entradas deseas comprar?");
@@ -102,7 +102,7 @@ botRouter.post("/webhook", express.json(), async (request, response) => {
       );
     } else {
       agent.add(
-        "Lo sentimos, no quedan entradas disponibles para esta función"
+        "Lo sentimos, no quedan entradas disponibles para esta función. ¿Deseas algo más?"
       );
     }
   }
