@@ -117,6 +117,7 @@ botRouter.post("/webhook", express.json(), async (request, response) => {
   intentMap.set("Select play - information - no", sayGoodbye);
   intentMap.set("Select play - buy", askForNumber);
   intentMap.set("Select play - buy - yes", offerHelp);
+  intentMap.set("Select play - buy - no", sayGoodBye);
   intentMap.set("Select tickets number", showTicket);
   intentMap.set("Select tickets number - yes", offerHelp);
   intentMap.set("Select tickets number - no", sayGoodbye);
