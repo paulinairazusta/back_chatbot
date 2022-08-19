@@ -98,7 +98,7 @@ botRouter.post("/webhook", express.json(), async (request, response) => {
       agent.add("¿Deseas algo más?");
     } else if (agent.parameters.number > play.tickets && play.tickets > 0) {
       agent.add(
-        `Lo sentimos, el número de entradas solicitado supera la cantidad disponible. En este momento quedan ${play.tickets} entradas para ${play.name}`
+        `Lo sentimos, el número de entradas solicitado supera la cantidad disponible. En este momento quedan ${play.tickets} entradas para "${play.name}"`
       );
     } else {
       agent.add(
